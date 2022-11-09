@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class EnemyView : MonoBehaviour
 {
     private Enemy m_Enemy;
 
+    [SerializeField] private NavMeshAgent m_Agent;
+
     public Enemy Enemy => m_Enemy;
+    public NavMeshAgent Agent => m_Agent;
 
-
-    internal void AttachData(Enemy enemy)
+    public void AttachData(Enemy enemy)
     {
         m_Enemy = enemy;
     }
 
-    internal void Die()
+    public void Die()
     {
         Destroy(gameObject);
     }

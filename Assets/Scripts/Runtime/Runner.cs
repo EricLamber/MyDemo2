@@ -9,7 +9,7 @@ public class Runner : MonoBehaviour
 
     void Update()
     {
-        if(!m_IsRunning)
+        if (!m_IsRunning)
             return;
 
         UpdateControllers();
@@ -32,7 +32,8 @@ public class Runner : MonoBehaviour
     {
         m_Controllers = new List<IController>
         {
-            new EnemySpawnController(Game.CurrentLevel.SpawnEnemyData,20f,20f)
+            new EnemySpawnController(Game.CurrentLevel.SpawnEnemyData, 50f, 50f),
+            new EnemyPatrolController()
         };
     }
 
@@ -54,7 +55,7 @@ public class Runner : MonoBehaviour
 
     private void UpdateControllers()
     {
-        foreach(IController controller in m_Controllers)
+        foreach (IController controller in m_Controllers)
         {
             if (!m_IsRunning)
                 return;
