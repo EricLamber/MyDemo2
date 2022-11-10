@@ -6,7 +6,8 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     public int StartHealth;
-    public float Speed;
+    public float RateOfPatrol;
+    public float PatrolRadius;
     public EnemyView ViewPrefab;
 
     public int Damage;

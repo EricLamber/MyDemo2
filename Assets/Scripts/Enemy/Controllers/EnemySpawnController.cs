@@ -43,9 +43,10 @@ public class EnemySpawnController : IController
 
         view.transform.position = new Vector3(xCord, 0, zCord);
 
-        Enemy enemy = new Enemy(data);
+        EnemyBase enemy = new EnemyBase(data);
 
         enemy.AttachView(view);
+        enemy.View.CreateMoveAgent();
 
         Game.Player.EnemySpawned(enemy);
     }

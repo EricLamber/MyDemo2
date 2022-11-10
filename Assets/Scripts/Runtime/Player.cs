@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Player
 {
-    private List<Enemy> m_Enemies = new List<Enemy>();
-    public IReadOnlyList<Enemy> Enemies => m_Enemies;
+    private List<EnemyBase> m_Enemies = new List<EnemyBase>();
+    public IReadOnlyList<EnemyBase> Enemies => m_Enemies;
 
-    public void EnemySpawned(Enemy enemy)
+    public void EnemySpawned(EnemyBase enemy)
     {
         m_Enemies.Add(enemy);
     }
 
-    public void EnemyDied(Enemy enemy)
+    public void EnemyDied(EnemyBase enemy)
     {
         m_Enemies.Remove(enemy);
     }

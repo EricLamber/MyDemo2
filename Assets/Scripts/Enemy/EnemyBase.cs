@@ -1,6 +1,6 @@
 using System;
 
-public class Enemy 
+public class EnemyBase 
 {
     private EnemyView m_View;
     private EnemyData m_Data;
@@ -14,7 +14,7 @@ public class Enemy
 
     public event Action<int> OnHealthChanged;
 
-    public Enemy(EnemyData data)
+    public EnemyBase(EnemyData data)
     {
         m_Data = data;
         m_Health = data.StartHealth;
@@ -23,7 +23,7 @@ public class Enemy
     public void AttachView(EnemyView view)
     {
         m_View = view;
-        m_View.AttachData(this);
+        m_View.AttachBase(this);
     }
 
     public void GetDamage(int damage)
