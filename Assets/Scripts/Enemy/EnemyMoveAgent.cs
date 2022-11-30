@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMoveAgent : IMoveAgent
+public class EnemyMoveAgent : IEnemyMoveAgent
 {
     
     private NavMeshAgent m_Agent;
@@ -22,7 +22,7 @@ public class EnemyMoveAgent : IMoveAgent
         m_PatrolRadius = data.PatrolRadius;
     }
 
-    public void MoveUpdate()
+    public void EnemyMoveUpdate()
     {
         float passedTime = Time.time - m_LastMoveTime;
         

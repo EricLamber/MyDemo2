@@ -32,7 +32,9 @@ public class Runner : MonoBehaviour
     {
         m_Controllers = new List<IController>
         {
+            new CharacterSpawnController(),
             new EnemySpawnController(Game.CurrentLevel.SpawnEnemyData, 50f, 50f),
+            new CharacterMoveController(),
             new EnemyPatrolController()
         };
     }

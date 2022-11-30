@@ -1,6 +1,6 @@
 using System;
 
-public class EnemyBase 
+public class EnemyBase
 {
     private EnemyView m_View;
     private EnemyData m_Data;
@@ -12,7 +12,7 @@ public class EnemyBase
 
     public bool IsDead => m_Health <= 0;
 
-    public event Action<int> OnHealthChanged;
+    public event Action<int> OnEnemyHealthChanged;
 
     public EnemyBase(EnemyData data)
     {
@@ -36,11 +36,8 @@ public class EnemyBase
         if (m_Health < 0)
             m_Health = 0;
 
-        OnHealthChanged?.Invoke(m_Health);
+        OnEnemyHealthChanged?.Invoke(m_Health);
     }
 
-    public void Die()
-    {
-        View.Die();
-    }
+    public void Die() => View.Die();
 }

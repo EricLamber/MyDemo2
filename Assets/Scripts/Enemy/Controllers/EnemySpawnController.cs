@@ -35,10 +35,10 @@ public class EnemySpawnController : IController
     {
         EnemyView view = Object.Instantiate(data.ViewPrefab);
 
-        var HalfOfLevelHight = m_LevelHight / 2;
+        var HalfOfLevelHight = m_LevelHight * 0.5f;
         float xCord = Random.Range(-HalfOfLevelHight, HalfOfLevelHight);
 
-        var HalfOfLevelWeight = m_LevelWeight / 2;
+        var HalfOfLevelWeight = m_LevelWeight * 0.5f;
         float zCord = Random.Range(-HalfOfLevelWeight, HalfOfLevelWeight);
 
         view.transform.position = new Vector3(xCord, 0, zCord);

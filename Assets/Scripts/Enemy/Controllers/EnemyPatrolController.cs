@@ -10,7 +10,7 @@ public class EnemyPatrolController : IController
     {
         foreach (EnemyBase enemy in Game.Player.Enemies)
         {
-            enemy.View.MoveAgent.MoveUpdate();
+            enemy.View.MoveAgent.EnemyMoveUpdate();
         }
     }
 }

@@ -7,4 +7,5 @@ public class DataRoot : ScriptableObject
 {
     //public SceneData UIScene;
     public List<LevelData> Levels;
+    [HideInInspector] public CharacterData Character;
 }

@@ -1,18 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterChoiseData : MonoBehaviour
+[CreateAssetMenu(menuName = "Datas/CharacterChoiseData", fileName = "CharacterChoiseData")]
+public class CharacterChoiseData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<CharacterData> Characters = new();
 }

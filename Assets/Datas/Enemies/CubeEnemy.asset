@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CubeEnemy
   m_EditorClassIdentifier: 
   StartHealth: 5
-  Speed: 5
+  RateOfPatrol: 3
+  PatrolRadius: 6
   ViewPrefab: {fileID: 489618803404499363, guid: 2dbb7a6a124bb2142972ec09daa9746d, type: 3}
   Damage: 5

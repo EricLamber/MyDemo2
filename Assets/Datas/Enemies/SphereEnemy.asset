@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SphereEnemy
   m_EditorClassIdentifier: 
   StartHealth: 3
-  Speed: 5
+  RateOfPatrol: 1
+  PatrolRadius: 10
   ViewPrefab: {fileID: 8170591885867567703, guid: c54f41be4c3c58941865525d13222f8f, type: 3}
   Damage: 10

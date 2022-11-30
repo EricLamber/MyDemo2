@@ -1,20 +1,21 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameStarter : MonoBehaviour
 {
     [SerializeField] private DataRoot m_DataRoot;
+    [SerializeField] private CharacterChoiseData m_CharacterChoise;
+    [SerializeField] private List<Button> m_CharacterCoiseButtons = new();
 
     private void Awake()
     {
-        Game.SetDataRoot(m_DataRoot);
+        m_CharacterCoiseButtons[0].onClick.AddListener(CubeChoise);
     }
 
-    //for start button or something like that idk
-    void Update()
+    private void CubeChoise()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Game.StartLevel(m_DataRoot.Levels[0]);
-        }
+        Game.SetDataRoot(m_DataRoot, m_CharacterChoise.Characters[0]);
+        Game.StartLevel(m_DataRoot.Levels[0]);
     }
 }

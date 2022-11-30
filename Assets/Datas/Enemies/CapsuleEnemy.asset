@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CapsuleEnemy
   m_EditorClassIdentifier: 
   StartHealth: 4
-  Speed: 10
+  RateOfPatrol: 3
+  PatrolRadius: 5
   ViewPrefab: {fileID: 2695184560499415938, guid: 97e75fae41092884aba565f7b3ddbb56, type: 3}
   Damage: 5

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CylinderEnemy
   m_EditorClassIdentifier: 
   StartHealth: 10
-  Speed: 2
+  RateOfPatrol: 10
+  PatrolRadius: 2
   ViewPrefab: {fileID: 8134261531270212846, guid: 667839f3f1e489947a4f89396ebafc89, type: 3}
   Damage: 2

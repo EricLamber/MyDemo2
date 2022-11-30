@@ -15,7 +15,11 @@ public static class Game
     public static DataRoot DataRoot => s_DataRoot;
     public static LevelData CurrentLevel => s_CurrentLevel;
 
-    public static void SetDataRoot(DataRoot dataRoot) => s_DataRoot = dataRoot;
+    public static void SetDataRoot(DataRoot dataRoot, CharacterData character)
+    {
+        s_DataRoot = dataRoot;
+        s_DataRoot.Character = character;
+    }
 
     public static void StartLevel(LevelData levelData)
     {

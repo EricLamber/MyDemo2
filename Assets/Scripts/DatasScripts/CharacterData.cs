@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterData : MonoBehaviour
+[CreateAssetMenu(menuName = "Datas/CharacterData", fileName = "CharacterData")]
+public class CharacterData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int StartHealth;
+    public int StartDamade;
+    public CharacterView ViewPrefab;
 }

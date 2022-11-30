@@ -6,15 +6,12 @@ public class EnemyView : MonoBehaviour
 {
     private EnemyBase m_Enemy;
 
-    private IMoveAgent m_MoveAgent;
+    private IEnemyMoveAgent m_MoveAgent;
 
     public EnemyBase Enemy => m_Enemy;
-    public IMoveAgent MoveAgent => m_MoveAgent;
+    public IEnemyMoveAgent MoveAgent => m_MoveAgent;
 
-    public void AttachBase(EnemyBase enemy)
-    {
-        m_Enemy = enemy;
-    }
+    public void AttachBase(EnemyBase enemy) => m_Enemy = enemy;
 
     public void CreateMoveAgent()
     {
@@ -22,8 +19,5 @@ public class EnemyView : MonoBehaviour
         m_MoveAgent = new EnemyMoveAgent(agent, m_Enemy.Data);
     }
 
-    public void Die()
-    {
-        Destroy(gameObject);
-    }
+    public void Die() => Destroy(gameObject);
 }
