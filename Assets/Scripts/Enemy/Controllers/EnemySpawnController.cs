@@ -12,6 +12,8 @@ public class EnemySpawnController : IController
     private float m_LevelHight;
     private float m_LevelWeight;
 
+    private List<PoolEnemies> pools = new List<PoolEnemies>();
+
     public EnemySpawnController(SpawnEnemyData spawnEnemyData, float LevelHight, float LevelWeight)
     {
         m_SpawnEnemyData = spawnEnemyData;
@@ -22,32 +24,37 @@ public class EnemySpawnController : IController
     public void OnStart()
     {
         for (int i = 0; i < m_SpawnEnemyData.Enemies.Count; i++)
-        {
-            EnemySpawn(m_SpawnEnemyData.Enemies[i]);
-        }
+            pools.Add(new PoolEnemies(m_SpawnEnemyData.Enemies[i], 4, true));
     }
 
     public void OnStop() { }
 
-    public void OnUpdate() { }
-
-    private void EnemySpawn(EnemyData data)
+    public void OnUpdate() 
     {
-        EnemyView view = Object.Instantiate(data.ViewPrefab);
+        int defferense = m_SpawnEnemyData.NumberOfEnemiesOnField - Game.Player.Enemies.Count;
 
-        var HalfOfLevelHight = m_LevelHight * 0.5f;
+        if (defferense == 0)
+            return;
+
+        int maxNumOfEnemies = pools.Count;
+
+        for (int i = 0; i < defferense; i++)
+        {
+            EnemyBase enemy = pools[Random.Range(0, maxNumOfEnemies)].GetFreeElement();
+            EnemySpawn(enemy);
+        }
+    }
+
+    private void EnemySpawn(EnemyBase enemy)
+    {
+        float HalfOfLevelHight = m_LevelHight * 0.5f;
         float xCord = Random.Range(-HalfOfLevelHight, HalfOfLevelHight);
 
-        var HalfOfLevelWeight = m_LevelWeight * 0.5f;
+        float HalfOfLevelWeight = m_LevelWeight * 0.5f;
         float zCord = Random.Range(-HalfOfLevelWeight, HalfOfLevelWeight);
 
-        view.transform.position = new Vector3(xCord, 0, zCord);
-
-        EnemyBase enemy = new EnemyBase(data);
-
-        enemy.AttachView(view);
-        enemy.View.CreateMoveAgent();
-
+        enemy.View.transform.position = new Vector3(xCord, 0, zCord);
+        enemy.View.gameObject.SetActive(true);
         Game.Player.EnemySpawned(enemy);
     }
 }

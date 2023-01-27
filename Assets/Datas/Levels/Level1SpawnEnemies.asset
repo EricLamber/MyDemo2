@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb092ff2978f7a47b928ee68278ea3d, type: 3}
   m_Name: Level1SpawnEnemies
   m_EditorClassIdentifier: 
+  NumberOfEnemiesOnField: 10
   Enemies:
   - {fileID: 11400000, guid: 09faab7c2fd74cb43bbe2c39372e83c0, type: 2}
   - {fileID: 11400000, guid: 91cca6e8d086a4b4d980c2974d535046, type: 2}

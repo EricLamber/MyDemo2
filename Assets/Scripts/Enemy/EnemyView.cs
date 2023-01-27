@@ -19,5 +19,7 @@ public class EnemyView : MonoBehaviour
         m_MoveAgent = new EnemyMoveAgent(agent, m_Enemy.Data);
     }
 
-    public void Die() => Destroy(gameObject);
+    private void OnDisable() => Game.Player.EnemyDied(m_Enemy);
+
+    public void Die() => gameObject.SetActive(false);
 }
