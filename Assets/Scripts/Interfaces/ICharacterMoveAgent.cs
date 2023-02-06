@@ -2,5 +2,5 @@
 
 public interface ICharacterMoveAgent
 {
-    void CharacterMoveUpdate(Vector3 derection);
+    void CharacterMoveUpdate(Vector3 direction, float lookAt);
 }

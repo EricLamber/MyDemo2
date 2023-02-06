@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Player
 {
+    #region Common
+
+    public Camera cam = null;
+
+    #endregion
+
     #region Enemyies
 
     private List<EnemyBase> m_Enemies = new List<EnemyBase>();

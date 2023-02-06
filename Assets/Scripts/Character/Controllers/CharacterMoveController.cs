@@ -17,8 +17,11 @@ public class CharacterMoveController : IController
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Vector3 derection = new Vector3(horizontal, 0, vertical);
+        Vector3 direction = new Vector3(horizontal, 0, vertical);
 
-        m_MoveAgent.CharacterMoveUpdate(derection);
+        Vector3 dir = Input.mousePosition - Game.Player.cam.WorldToScreenPoint(Game.Player.Charater.View.transform.position);
+        float angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg;
+
+        m_MoveAgent.CharacterMoveUpdate(direction, angle);
     }
 }

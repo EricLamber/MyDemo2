@@ -8,7 +8,7 @@ public class EnemyMoveAgent : IEnemyMoveAgent
     
     private NavMeshAgent m_Agent;
 
-    public EnemyMoveAgent(NavMeshAgent agent, EnemyData data)
+    public EnemyMoveAgent(NavMeshAgent agent)
     {
         m_Agent = agent;
     }

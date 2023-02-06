@@ -5,11 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Datas/EnemyData", fileName = "EnemyData")]
 public class EnemyData : ScriptableObject
 {
-    public int StartHealth;
-    public float RateOfPatrol;
-    public float PatrolRadius;
-    public EnemyView ViewPrefab;
+    [SerializeField] private int m_StartHealth;
+    [SerializeField] private float m_Speed;
+    [SerializeField] private EnemyView m_ViewPrefab;
+    [SerializeField] private int m_Damage;
 
-    public int Damage;
+    public int StartHealth => m_StartHealth;
+    public float Speed => m_Speed;
+    public EnemyView ViewPrefab => m_ViewPrefab;
+    public int Damage => m_Damage;
+
     //public Something for Reward; May be int for Rewards Dictionary key...
 }

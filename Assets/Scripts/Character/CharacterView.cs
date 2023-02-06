@@ -15,7 +15,7 @@ public class CharacterView : MonoBehaviour
 
     public void AttachBase(CharacterBase character) => m_Character = character;
     public void CreateCharacterControl() => m_CharacterControl = GetComponent<CharacterController>();
-    public void CreateMoveAgent() => m_MoveAgent = new CharacterMovementAgent(m_CharacterControl);
+    public void CreateMoveAgent() => m_MoveAgent = new CharacterMovementAgent(m_CharacterControl, m_Character.Data.Speed);
 
     public void Die() => Destroy(gameObject);
 }

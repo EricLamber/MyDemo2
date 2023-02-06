@@ -19,7 +19,9 @@ public class Runner : MonoBehaviour
     {
         CreateAllControllers();
         OnStartControllers();
+        Game.Player.cam = Camera.main;
         m_IsRunning = true;
+
     }
 
     public void StopRunning()
@@ -35,6 +37,7 @@ public class Runner : MonoBehaviour
             new CharacterSpawnController(),
             new EnemySpawnController(Game.CurrentLevel.SpawnEnemyData, 50f, 50f),
             new CharacterMoveController(),
+            new CameraController(),
             new EnemyPatrolController()
         };
     }

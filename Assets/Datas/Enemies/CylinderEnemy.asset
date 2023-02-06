@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0719a2ea427ea24e9dfd6c490e8004f, type: 3}
   m_Name: CylinderEnemy
   m_EditorClassIdentifier: 
-  StartHealth: 10
-  RateOfPatrol: 10
-  PatrolRadius: 2
-  ViewPrefab: {fileID: 8134261531270212846, guid: 667839f3f1e489947a4f89396ebafc89, type: 3}
-  Damage: 2
+  m_StartHealth: 10
+  m_Speed: 3
+  m_ViewPrefab: {fileID: 8134261531270212846, guid: 667839f3f1e489947a4f89396ebafc89, type: 3}
+  m_Damage: 5

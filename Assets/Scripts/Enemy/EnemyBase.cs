@@ -34,10 +34,13 @@ public class EnemyBase
         m_Health -= damage;
 
         if (m_Health < 0)
+        {
             m_Health = 0;
+            Die();
+        }
 
         OnEnemyHealthChanged?.Invoke(m_Health);
     }
 
-    public void Die() => View.Die();
+    private void Die() => View.Die();
 }

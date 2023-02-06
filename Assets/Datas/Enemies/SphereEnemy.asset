@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0719a2ea427ea24e9dfd6c490e8004f, type: 3}
   m_Name: SphereEnemy
   m_EditorClassIdentifier: 
-  StartHealth: 3
-  RateOfPatrol: 1
-  PatrolRadius: 10
-  ViewPrefab: {fileID: 8170591885867567703, guid: c54f41be4c3c58941865525d13222f8f, type: 3}
-  Damage: 10
+  m_StartHealth: 2
+  m_Speed: 10
+  m_ViewPrefab: {fileID: 8170591885867567703, guid: c54f41be4c3c58941865525d13222f8f, type: 3}
+  m_Damage: 1

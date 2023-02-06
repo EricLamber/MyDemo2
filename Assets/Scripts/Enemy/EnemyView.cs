@@ -16,7 +16,8 @@ public class EnemyView : MonoBehaviour
     public void CreateMoveAgent()
     {
         NavMeshAgent agent = this.GetComponent<NavMeshAgent>();
-        m_MoveAgent = new EnemyMoveAgent(agent, m_Enemy.Data);
+        agent.speed = m_Enemy.Data.Speed;
+        m_MoveAgent = new EnemyMoveAgent(agent);
     }
 
     private void OnDisable() => Game.Player.EnemyDied(m_Enemy);

@@ -20,7 +20,7 @@ public class CharacterBase
     public CharacterBase(CharacterData data)
     {
         m_Data = data;
-        m_Health = data.StartHealth;
+        m_Health = data.BaseHealth;
     }
 
     public void AttachView(CharacterView view)
